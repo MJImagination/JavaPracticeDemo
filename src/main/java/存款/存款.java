@@ -9,7 +9,7 @@ import java.util.Scanner;
  */
 public class 存款 {
     double lixi = 0.03;
-    double average_month_money = 5000;
+    double average_month_money = 12000;
     double result = 0;
     double sum_lixi = 0;
     double aim = 0;
