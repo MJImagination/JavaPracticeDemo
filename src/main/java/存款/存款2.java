@@ -43,8 +43,8 @@ public class 存款2 {
         System.out.print("第" + n + "个月利息" + result * lixi / 12 + "  ");
         sum_lixi += result * lixi / 12;
 //        result += result * lixi / 12;
-        System.out.print("   第" + n + "个月的本金加利息" + result + sum_lixi+"  即 " + year(n) + "年 " + month(n) + "月");
-        System.out.println("  第" + n + "个月总利息：" + sum_lixi + "  第" + n + "个月本金：" + result );
+        System.out.print("   第" + n + "个月的本金加利息" + result + sum_lixi + "  即 " + year(n) + "年 " + month(n) + "月");
+        System.out.println("  第" + n + "个月总利息：" + sum_lixi + "  第" + n + "个月本金：" + result);
         return result;
     }
 

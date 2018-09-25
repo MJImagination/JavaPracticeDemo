@@ -3,7 +3,7 @@ package 存款;
 import java.util.Scanner;
 
 /**
- * @Description:  利滚利
+ * @Description: 利滚利
  * @Author: MJ
  * @Date: Created in 2018/7/4
  */
@@ -43,7 +43,7 @@ public class 存款 {
         sum_lixi += result * lixi / 12;
         result += result * lixi / 12;
         System.out.print("   第" + n + "个月的本金加利息" + result + "  即 " + year(n) + "年 " + month(n) + "月");
-        System.out.println("  第" + n +"个月总利息：" + sum_lixi + "  第" + n +"个月本金：" + (result - sum_lixi));
+        System.out.println("  第" + n + "个月总利息：" + sum_lixi + "  第" + n + "个月本金：" + (result - sum_lixi));
         return result;
     }
 
