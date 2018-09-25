@@ -27,6 +27,12 @@ public class 存款 {
         Scanner scan = new Scanner(System.in);
         aim = scan.nextDouble();
 
+        System.out.print("请输入每月存款金额：");
+        average_month_money = scan.nextDouble();
+
+        System.out.print("请输入年利率：");
+        lixi = scan.nextDouble();
+
         result = average_month_money;
 
         while (calc() < aim) {
