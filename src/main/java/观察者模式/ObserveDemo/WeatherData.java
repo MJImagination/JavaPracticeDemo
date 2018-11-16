@@ -31,7 +31,7 @@ public class WeatherData extends Observable {
         //一定要有这步
         super.setChanged();
         /**
-         * 下面2个顺序还不能改，改了“其他通知参数”就没了
+         * 下面2个顺序还不能改，改了“其他通知参数”就没了  
          */
         notifyObservers();
 //        notifyObservers("其他通知参数");
