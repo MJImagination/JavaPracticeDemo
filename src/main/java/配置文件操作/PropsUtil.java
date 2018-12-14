@@ -22,7 +22,7 @@ public class PropsUtil {
         loadProps(file);
     }
 
-    /**
+    /** 常见问题 街道 提问
      * 加载属性文件
      */
     private static void loadProps(File file) {
@@ -73,6 +73,10 @@ public class PropsUtil {
             value = map.get(key);
         }
         return value;
+    }
+
+    public static void main(String[] args){
+        new PropsUtil();
     }
 
 }
