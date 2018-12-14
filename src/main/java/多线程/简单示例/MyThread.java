@@ -1,4 +1,4 @@
-package 多线程.Demo1;
+package 多线程.简单示例;
 
 class MyThread extends Thread {
     private String name;
