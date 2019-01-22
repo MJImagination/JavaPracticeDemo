@@ -1,15 +1,15 @@
 package 多线程.抢票;
 
-public class SellTicketDemo implements Runnable {
+public class SellTicketDemo2 implements Runnable {
 
-    private int ticketCount = 100;// 总的票数，这个是共享资源，多个线程都会访问
+    private static int ticketCount = 100;// 总的票数，这个是共享资源，多个线程都会访问
     Object mutex = new Object();// 锁，自己定义的，或者使用实例的锁
 
     /**
      * 卖票
      */
-    public void sellTicket() {
-        synchronized (mutex) {
+    public static synchronized void sellTicket() {
+//        synchronized (mutex) {
             // 当操作的是共享数据时,
             // 用同步代码块进行包围起来,执行里面的代码需要mutex的锁，但是mutex只有一个锁。这样在执行时,只能有一个线程执行同步代码块里面的内容
 
@@ -20,7 +20,7 @@ public class SellTicketDemo implements Runnable {
                 System.out.println("票已经卖完！");
                 return;
             }
-        }
+//        }
     }
 
     @Override
@@ -42,12 +42,12 @@ public class SellTicketDemo implements Runnable {
     }
 
     public static void main(String[] args) {
-        SellTicketDemo runTicekt = new SellTicketDemo();// 只定义了一个实例，这就只有一个Object mutex = new Object();即一个锁。
+        SellTicketDemo2 runTicekt = new SellTicketDemo2();// 只定义了一个实例，这就只有一个Object mutex = new Object();即一个锁。
         Thread th1 = new Thread(runTicekt, "窗口1");// 每个线程等其他线程释放该锁后，才能执行
         Thread th2 = new Thread(runTicekt, "窗口2");
         Thread th3 = new Thread(runTicekt, "窗口3");
         Thread th4 = new Thread(runTicekt, "窗口4");
-        SellTicketDemo runTicekt2 = new SellTicketDemo();// 只定义了一个实例，这就只有一个Object mutex = new Object();即一个锁。
+        SellTicketDemo2 runTicekt2 = new SellTicketDemo2();// 只定义了一个实例，这就只有一个Object mutex = new Object();即一个锁。
         Thread th5 = new Thread(runTicekt2, "窗口5");
         th1.start();
         th2.start();
