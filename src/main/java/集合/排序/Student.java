@@ -120,7 +120,7 @@ public class Student implements Comparable<Student> {
         }
 
 
-        //按照scor有大到小排序
+        //按照scor由大到小排序
         System.out.println("------按照scor有大到小排序-------");
         Collections.sort(list, new Comparator<Student>() {
             @Override

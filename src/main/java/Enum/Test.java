@@ -13,6 +13,9 @@ public class Test {
         System.out.println(ConsumerEnum.getCode("普通签章"));
         System.out.println(ConsumerEnum.getMsg(1));
         System.out.println(ConsumerEnum.SEAL);
+        //获得数组
+        System.out.println(Color.class.getEnumConstants());
+        System.out.println(Color.BLANK.getDeclaringClass());
 
         String aa = "1976-08-24";
         System.out.println( UUID.randomUUID().toString().replace("-", ""));

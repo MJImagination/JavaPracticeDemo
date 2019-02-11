@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache updateCheck="false" name="shiroCache">  
+	<!-- 默认 -->
+    <defaultCache  
+            maxElementsInMemory="10000"  
+            eternal="false"  
+            timeToIdleSeconds="120"  
+            timeToLiveSeconds="120"  
+            overflowToDisk="false"  
+            diskPersistent="false"  
+            diskExpiryThreadIntervalSeconds="120"  
+            />  
+    <!-- 密码错误 -->
+    <cache name="passwordRetryCache"
+           maxEntriesLocalHeap="2000"
+           eternal="false"
+           timeToIdleSeconds="3600"
+           timeToLiveSeconds="0"
+           overflowToDisk="false"
+           statistics="true">
+    </cache>
+    <!-- 身份验证 -->
+    <cache name="authenticationCache"
+           maxEntriesLocalHeap="2000"
+           eternal="false"
+           timeToIdleSeconds="3600"
+           timeToLiveSeconds="0"
+           overflowToDisk="false"
+           statistics="true">
+    </cache>
+    <!-- 授权 -->
+    <cache name="authorizationCache"
+           maxEntriesLocalHeap="2000"
+           eternal="false"
+           timeToIdleSeconds="3600"
+           timeToLiveSeconds="0"
+           overflowToDisk="false"
+           statistics="true">
+    </cache>
+    <!-- session-->
+    <cache name="shiro-activeSessionCache"
+           maxEntriesLocalHeap="2000"
+           eternal="false"
+           timeToIdleSeconds="3600"
+           timeToLiveSeconds="0"
+           overflowToDisk="false"
+           statistics="true">
+    </cache>
+    
+    <!-- shiro-kickout-session-->
+    <cache name="shiro-kickout-session"
+           maxEntriesLocalHeap="2000"
+           eternal="false"
+           timeToIdleSeconds="3600"
+           timeToLiveSeconds="0"
+           overflowToDisk="false"
+           statistics="true">
+    </cache> -->
+    
+    <!-- shiro-activeUser-->
+    <cache name="shiro-activeUser"
+           maxEntriesLocalHeap="2000"
+           eternal="false"
+           timeToIdleSeconds="3600"
+           timeToLiveSeconds="0"
+           overflowToDisk="false"
+           statistics="true">
+    </cache>
+
+    <!--************************ CacheConstants 永久缓存  START *******************************-->
+    <cache name="USER_ID_OBJECT"
+           maxEntriesLocalHeap="0"
+           eternal="true"
+           timeToIdleSeconds="0"
+           timeToLiveSeconds="0"
+           overflowToDisk="false"
+           statistics="true">
+    </cache>
+
+    <cache name="EVENTTYPE_BIGTYPE_LIST"
+           maxEntriesLocalHeap="0"
+           eternal="true"
+           timeToIdleSeconds="0"
+           timeToLiveSeconds="0"
+           overflowToDisk="false"
+           statistics="true">
+    </cache>
+
+    <cache name="EVENTTYPE_PID_SMALLLIST"
+           maxEntriesLocalHeap="0"
+           eternal="true"
+           timeToIdleSeconds="0"
+           timeToLiveSeconds="0"
+           overflowToDisk="false"
+           statistics="true">
+    </cache>
+
+    <cache name="EVENTTYPE_PID_THINLIST"
+           maxEntriesLocalHeap="0"
+           eternal="true"
+           timeToIdleSeconds="0"
+           timeToLiveSeconds="0"
+           overflowToDisk="false"
+           statistics="true">
+    </cache>
+
+    <cache name="ORGANIZATION_ID_OBJECT"
+           maxEntriesLocalHeap="0"
+           eternal="true"
+           timeToIdleSeconds="0"
+           timeToLiveSeconds="0"
+           overflowToDisk="false"
+           statistics="true">
+    </cache>
+
+    <cache name="DUTYREGION_ID_OBJECT"
+           maxEntriesLocalHeap="0"
+           eternal="true"
+           timeToIdleSeconds="0"
+           timeToLiveSeconds="0"
+           overflowToDisk="false"
+           statistics="true">
+    </cache>
+
+
+    <cache name="PROPERTIES_NAME_VALUE"
+           maxEntriesLocalHeap="0"
+           eternal="true"
+           timeToIdleSeconds="0"
+           timeToLiveSeconds="0"
+           overflowToDisk="false"
+           statistics="true">
+    </cache>
+
+    <cache name="EVENTTYPE_ID_OBJECT"
+           maxEntriesLocalHeap="0"
+           eternal="true"
+           timeToIdleSeconds="0"
+           timeToLiveSeconds="0"
+           overflowToDisk="false"
+           statistics="true">
+    </cache>
+
+    <cache name="ORGANIZATION_STREE_LIST"
+           maxEntriesLocalHeap="0"
+           eternal="true"
+           timeToIdleSeconds="0"
+           timeToLiveSeconds="0"
+           overflowToDisk="false"
+           statistics="true">
+    </cache>
+
+    <cache name="ORGANIZATION_PID_COUNTRYLIST"
+           maxEntriesLocalHeap="0"
+           eternal="true"
+           timeToIdleSeconds="0"
+           timeToLiveSeconds="0"
+           overflowToDisk="false"
+           statistics="true">
+    </cache>
+
+    <cache name="ORGANIZATION_PID_GRIDLIST"
+           maxEntriesLocalHeap="0"
+           eternal="true"
+           timeToIdleSeconds="0"
+           timeToLiveSeconds="0"
+           overflowToDisk="false"
+           statistics="true">
+    </cache>
+
+    <cache name="EVENTTYPE_KEY_MAP"
+           maxEntriesLocalHeap="0"
+           eternal="true"
+           timeToIdleSeconds="0"
+           timeToLiveSeconds="0"
+           overflowToDisk="false"
+           statistics="true">
+    </cache>
+
+
+
+
+
+
+
+
+    <!--************************ CacheConstants 永久缓存  END ******************************* -->
+</ehcache>
