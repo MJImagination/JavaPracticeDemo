@@ -7,7 +7,7 @@ package 多线程.抢票;
  * 来源：CSDN
  * 原文：https://blog.csdn.net/qq_34724252/article/details/78034276
  * 版权声明：本文为博主原创文章，转载请附上博文链接！
- *
+ * <p>
  * 多次启动cpu占用率 100%
  */
 public class A extends Thread {
@@ -16,8 +16,9 @@ public class A extends Thread {
 
     @Override
     public void run() {
-        while (true) {
-            synchronized (str) {
+
+        synchronized (str) {
+            while (true) {
                 if (tickets > 0) {
                     System.out.println("第" + Thread.currentThread().getName() + "个线程卖出了第" + tickets + "张票");
                     --tickets;
