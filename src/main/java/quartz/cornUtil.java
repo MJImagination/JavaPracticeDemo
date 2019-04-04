@@ -1,5 +1,6 @@
 package quartz;
 
+import org.quartz.CronExpression;
 import org.quartz.TriggerUtils;
 import org.quartz.impl.triggers.CronTriggerImpl;
 
@@ -86,5 +87,29 @@ public class cornUtil {
         Date date1 = sdf.parse("2019-04-02 10:10:10");
         Date date2 = sdf.parse("2019-05-02 10:10:10");
         getRecentExecTime2("0 0/5 * * * ?", 10, date1, date2);
+    }
+
+
+    /**
+     * 获取下次运行时间
+     * @param cron_expression
+     * @param lastRunTime 上一次运行时间
+     * @return
+     */
+    public static String getNextRunTime(String cron_expression, Long lastRunTime) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String date = "";
+        CronExpression cronExpression = null;
+        try {
+            cronExpression = new CronExpression(cron_expression);
+            if(lastRunTime!=null){
+                date = sdf.format(cronExpression.getNextValidTimeAfter(new Date(lastRunTime)));
+            }else{
+                date = sdf.format(cronExpression.getNextValidTimeAfter(new Date()));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return date;
     }
 }
