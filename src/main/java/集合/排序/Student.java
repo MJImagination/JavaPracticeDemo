@@ -132,5 +132,58 @@ public class Student implements Comparable<Student> {
         for (Student student : list) {
             System.out.println(student.getName() + " " + student.getAge() + " " + student.getScore());
         }
+
+
+        /*************************字符串长短排序***********************/
+        System.out.println("*************************字符串长短排序***********************");
+        String aa = "002001004001001000,002001004001001001001";
+        String[] arrays = aa.split(",");
+        List<String> stringList = Arrays.asList(arrays);
+        for (String s : stringList) {
+            System.out.println(s);
+        }
+        System.out.println("排序后");
+        Collections.sort(stringList, new Comparator<String>() {
+            @Override
+            public int compare(String var1, String var2) {
+                if (var1.length() > var2.length()) {
+                    return 1;
+                } else if (var1.length() == var2.length()) {
+                    return 0;
+                } else {
+                    return -1;
+                }
+
+            }
+        });
+        for (String s : stringList) {
+            System.out.println(s);
+        }
+
+
+
+        List<String> result = new ArrayList<>();
+
+        System.out.println("过滤");
+        for (int i = 0; i < arrays.length; i++) {
+            boolean flag = true;
+            for (int j = 0; j < arrays.length ; j++) {
+                if (arrays[i].indexOf(arrays[j]) ==0 && !arrays[i].equals(arrays[j])) {
+                    flag = false;
+                    break;
+                }
+            }
+            if(flag){
+                result.add(arrays[i]);
+            }
+        }
+        for (String s : result) {
+            System.out.println(s);
+        }
+
+//        System.out.println("002001001001".indexOf("002001001001001"));
+//        System.out.println("002001001001001".indexOf("002001001001"));
+//        System.out.println("002001003002001010".indexOf("002001010"));
+
     }
 }

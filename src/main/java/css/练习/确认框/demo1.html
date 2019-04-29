@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-3.2.1.min.js"></script>
+</head>
+<style type="text/css">
+    /*所有元素默认都会有padding和margin 初始清空*/
+    div, ul, li {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font-weight: normal;
+        vertical-align: baseline;
+    }
+
+    body {
+        /*margin: 0 auto;*/
+        /*width: 1280px;*/
+        /*height: 1280px;*/
+    }
+
+
+    .div1 {
+        /*border: 1px solid;*/
+        z-index: 8;
+        width: 500px;
+        height: 200px;
+        border-radius: 0.8rem;
+        /*padding: 20px 19px;*/
+        box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.4);
+        margin: auto;
+        position: absolute; /*为下面的绝对定位服务  https://baijiahao.baidu.com/s?id=1620193018460734299&wfr=spider&for=pc*/
+        overflow: hidden; /*下面 header 不是圆角 设置 超过父元素的自动影藏*/
+        /*position: fixed;*/
+    }
+
+    .div1 .close {
+        position: absolute;
+        right: 24px;
+        font-size: 30px;
+        top: 5px;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .div1 .header {
+        width: 100%;
+        background-color: rgb(30, 221, 255);
+        height: 70px;
+    }
+
+    .div1 .content {
+        padding: 10px 20px;
+        overflow: scroll;
+        height: 126px;
+    }
+
+    .div1 .content ul li {
+        display: flex;
+        color: #808080;
+    }
+
+    .div1 .content ul li p {
+        width: 50%;
+        display: flex;
+    }
+
+    .div1 .header_content{
+        position: absolute;
+        top: 23px;
+        left: 20px;
+        color: #fff;
+        font-size: 23px;
+    }
+    /*.div1 .content ul li p span:nth-child(1){*/
+    /*width: 30%;*/
+    /*}*/
+
+</style>
+
+
+<body>
+<button class="show">点我弹出</button>
+<div class="div1">
+    <div class="close">×</div>
+    <div class="header"></div>
+    <div class="header_content">杭州高腾机电科技有限公司</div>
+    <div class="content">
+        <ul>
+            <li>
+                <p>
+                    <span>累计工业总产值：</span>
+                    <span>5.15</span> 亿元
+
+
+                </p>
+                <p>
+                    同比
+                    <span>150.08%</span>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <span>累计工业总产值：</span>
+                    <span>5.15</span> 亿元
+
+
+                </p>
+                <p>
+                    同比
+                    <span>150.08%</span>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <span>累计工业总产值：</span>
+                    <span>5.15</span> 亿元
+
+
+                </p>
+                <p>
+                    同比
+                    <span>150.08%</span>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <span>累计工业总产值：</span>
+                    <span>5.15</span> 亿元
+
+
+                </p>
+                <p>
+                    同比
+                    <span>150.08%</span>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <span>累计工业总产值：</span>
+                    <span>5.15</span> 亿元
+
+
+                </p>
+                <p>
+                    同比
+                    <span>150.08%</span>
+                </p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    $('.show').on('click', function () {
+        $('.div1').show();
+    });
+
+
+    $('.div1 .close ').on('click', function () {
+        $('.div1').hide();
+    });
+
+
+
+</script>
+</body>
+</html>
