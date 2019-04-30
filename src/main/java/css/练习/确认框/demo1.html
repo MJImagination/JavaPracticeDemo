@@ -44,6 +44,16 @@
         top: 5px;
         color: #fff;
         cursor: pointer;
+        height: 30px;
+        width: 30px;
+        text-align: center;
+        line-height: 30px;
+    }
+    .div1 .close:hover {
+        color: #000000;
+    }
+    .div1 .close:active {
+       background-color: #ffffff;
     }
 
     .div1 .header {
@@ -75,9 +85,50 @@
         color: #fff;
         font-size: 23px;
     }
-    /*.div1 .content ul li p span:nth-child(1){*/
-    /*width: 30%;*/
-    /*}*/
+
+
+
+    /********************  雪碧图使用 strat *************************/
+    .div1 .close2{
+        position: absolute;
+        width: 28px;
+        height: 28px;
+        background: url(./test.png) no-repeat;
+        background-size: 320px 196px; /*按照图片实际大小放大2倍*/
+        background-position: 0px 0px;/*定位背景图片位置*/
+        right: 60px;
+        top: 20px;
+    }
+
+    /*鼠标移入样式*/
+    .div1 .close2:hover{
+        /*position: absolute;*/
+        /*width: 28px;*/
+        /*height: 28px;*/
+        /*background: url(./test.png) no-repeat;*/
+        /*background-size: 320px 196px; !*按照图片实际大小放大2倍*!*/
+        background-position: -27px 0px;
+        /*right: 60px;*/
+        /*top: 20px;*/
+    }
+
+    .div1 .close2:active{
+
+        background-position: -27px -28px;
+
+    }
+    /********************  雪碧图使用 end *************************/
+
+    .center-vertical{
+        position: relative;
+        top:50%;
+        transform:translateY(-50%);
+    }.center-horizontal{
+         position: relative;
+         left:50%;
+         transform:translateX(-50%);
+     }
+
 
 </style>
 
@@ -85,7 +136,10 @@
 <body>
 <button class="show">点我弹出</button>
 <div class="div1">
-    <div class="close">×</div>
+    <div class="close">
+        ×
+    </div>
+    <div class="close2"></div>
     <div class="header"></div>
     <div class="header_content">杭州高腾机电科技有限公司</div>
     <div class="content">
