@@ -2,6 +2,7 @@ package 多线程.生产者消费者.myTest;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.LinkedBlockingQueue;
 
 /**
  * @Description: 仓库
@@ -12,7 +13,7 @@ public class Warehouse {
     /**
      * 用于存放商品的阻塞队列 消费者
      */
-    private BlockingQueue<Product> blockingQueue = new LinkedBlockingDeque<>();
+    private BlockingQueue<Product> blockingQueue = new LinkedBlockingQueue<>();
 
     public Product getProduct(){
         try {
