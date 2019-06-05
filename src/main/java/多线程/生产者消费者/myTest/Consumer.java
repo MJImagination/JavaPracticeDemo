@@ -28,7 +28,7 @@ public class Consumer implements Runnable {
                 Thread.sleep((int) (Math.random() * 3000) );
                 System.out.println("消费 **** 消费者:" + name + "-" + Thread.currentThread().getId() + " 已消费产品:" + warehouse.getProduct().getName() + " 时间：" + DateTools.getSimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()) + "仓库数量：" + warehouse.getSize());
                 i--;
-                HttpGet httpGet = new HttpGet()；
+                HttpGet httpGet = new HttpGet();
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
