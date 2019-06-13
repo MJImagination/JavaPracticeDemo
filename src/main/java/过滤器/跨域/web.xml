@@ -1,0 +1,19 @@
+
+
+<filter>
+    <filter-name>CORSFilter</filter-name>
+    <filter-class>com.hesc.filter.CORSFilter</filter-class>
+    <init-param>
+        <param-name>allowOrigin</param-name>
+        <param-value>*</param-value>
+    </init-param>
+</filter>
+<filter-mapping>
+<filter-name>CORSFilter</filter-name>
+<url-pattern>/statisticsdata/*</url-pattern>
+</filter-mapping>
+<filter-mapping>
+<filter-name>CORSFilter</filter-name>
+<url-pattern>/onetable/*</url-pattern>
+</filter-mapping>
+
