@@ -1,0 +1,32 @@
+<!-- 拦截器 -->
+<mvc:interceptors>
+    <!-- 性能框架 -->
+    <mvc:interceptor>
+        <mvc:mapping path="/**"/>
+        <bean class="com.hesc.trundle.funmonitor.MonitorInterceptor"/>
+    </mvc:interceptor>
+
+
+    <!-- urp拦截器测试 -->
+    <mvc:interceptor>
+        <mvc:mapping path="/urp/user/*/update"/>
+        <bean class="com.hesc.urpex.interceptor.UserAddInterceptor"/>
+    </mvc:interceptor>
+    <mvc:interceptor>
+        <mvc:mapping path="/urp/organization/*/update"/>
+        <mvc:mapping path="/urp/organization/add"/>
+        <bean class="com.hesc.urpex.interceptor.OrgTypeInterceptor"/>
+    </mvc:interceptor>
+
+
+    <!--用以记录日志，要求被记录日志的方法有 @LogMsg 注解
+    <mvc:interceptor>
+        <mvc:mapping path="/login"/>
+        <bean class="com.hesc.urp.interceptor.LoginInterceptor"/>
+    </mvc:interceptor>
+    <mvc:interceptor>
+        <mvc:mapping path="/urp/**"/>
+        <bean class="com.hesc.urp.interceptor.LogOperateInterceptor"/>
+    </mvc:interceptor>
+    -->
+</mvc:interceptors>
