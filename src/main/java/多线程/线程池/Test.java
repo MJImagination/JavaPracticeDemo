@@ -16,7 +16,7 @@ class Task implements Callable<String> {
     @Override
     public String call() throws Exception {
         System.out.println(String.format("子线程 %s: 在进行计算", Thread.currentThread().getName()));
-        Thread.sleep(6000);
+        Thread.sleep(1000);
         int sum = 0;
         for (int i = 0; i < 100; i++)
             sum += i;
@@ -43,7 +43,7 @@ public class Test {
         //ExecutorService的invokeAll方法执行任务集合中的所有任务，并设置超时时间（100秒）。超时后的任务将取消进行
         List<Future<String>> futures = new ArrayList<>();
         try {
-            futures = executor.invokeAll(tasks, 10, TimeUnit.SECONDS);//注：执行所有的方法执行完的时间不能超过100秒，超时后的任务将取消执行
+            futures = executor.invokeAll(tasks, 1000, TimeUnit.SECONDS);//注：执行所有的方法执行完的时间不能超过100秒，超时后的任务将取消执行
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

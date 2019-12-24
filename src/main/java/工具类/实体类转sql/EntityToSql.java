@@ -1,32 +1,38 @@
-package 工具类;
+package 工具类.实体类转sql;
+
+import org.apache.commons.lang.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 //import org.hibernate.hql.internal.ast.SqlGenerator;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-/**
- * 将实体类转换成sql
- */
 public class EntityToSql {
     private static final Logger logger = LoggerFactory.getLogger(EntityToSql.class);
+    private static Map<String, String> fileNameMap = null;
 
     public static void main(String[] args) {
+        String classTargetPath = "D:\\svn项目\\JavaPracticeDemo\\target\\classes";
+        String classPath = "D:\\svn项目\\JavaPracticeDemo\\src\\main\\java\\工具类\\实体类转sql\\Apply2.java";
+        fileNameMap = JavaDocUse.getFieldCommentText(classTargetPath, classPath);
         //实体类所在的package在磁盘上的绝对路径
-        String packageName = "D:\\svn\\project\\zhejiang\\jinhuaTemp\\src\\main\\java\\com\\hesc\\event\\pojo\\";
+        String packageName = "D:\\svn项目\\JavaPracticeDemo\\src\\main\\java\\工具类\\实体类转sql\\";
+        //项目中实体类的路径
+        String prefix = "工具类.实体类转sql";
+        //要生成的类名，不写全部
+        List<String> targetCalssName = new ArrayList<>();
+        targetCalssName.add("Apply2");
         //生成sql的文件夹
         String filePath = "D:/create/";
-        //项目中实体类的路径
-        String prefix = "com.hesc.event.pojo";
+
         String className = "";
-        //
-        List<String> targetCalssName = new ArrayList<>();
-        targetCalssName.add("Apply");
+
 
         StringBuffer sqls = new StringBuffer();
         //获取包下的所有类名称
@@ -52,6 +58,7 @@ public class EntityToSql {
 
     /**
      * 将字段名大写转换成  "_小写"
+     *
      * @param className
      * @return
      */
@@ -83,18 +90,30 @@ public class EntityToSql {
             className = clz.getSimpleName();
             Field[] fields = clz.getDeclaredFields();
             StringBuffer column = new StringBuffer();
-            String varchar = " varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,";
+            String varchar = " varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL";
             for (Field f : fields) {
-                column.append(" \n `" +  convertName(f.getName()) + "`").append(varchar);
+                column.append(" \n `" + convertName(f.getName()) + "`").append(varchar);
+                if (StringUtils.isNotEmpty(fileNameMap.get(f.getName()))) {
+                    column.append(" COMMENT" + " '" + fileNameMap.get(f.getName())).append("'");
+                }
+                column.append(" ,");
             }
             StringBuffer sql = new StringBuffer();
+
+            String tableEnd = " \n ) ENGINE=InnoDB DEFAULT CHARSET=utf8";
+            if (StringUtils.isNotEmpty(fileNameMap.get("tableName"))) {
+                tableEnd += " COMMENT='" + fileNameMap.get("tableName") + "'";
+            }
+            tableEnd +=";";
+
             sql.append("\n DROP TABLE IF EXISTS `" + className + "`; ")
                     .append(" \n CREATE TABLE `" + className + "`  (")
-                    .append(" \n `id` int(11) NOT NULL AUTO_INCREMENT,")
+//                    .append(" \n `id` int(11) NOT NULL AUTO_INCREMENT,")
                     .append(" \n " + column)
                     .append(" \n PRIMARY KEY (`id`) USING BTREE,")
                     .append("\n INDEX `id`(`id`) USING BTREE")
-                    .append(" \n ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci;");
+//                    .append(" \n ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci;");
+                    .append(tableEnd);
             return sql.toString();
         } catch (ClassNotFoundException e) {
             logger.debug("该类未找到！");
@@ -156,4 +175,6 @@ public class EntityToSql {
             }
         }
     }
+
+
 }
