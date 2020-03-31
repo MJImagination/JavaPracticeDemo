@@ -6,3 +6,6 @@
 
     https://www.cnblogs.com/sunnyDream/p/7990864.html
     https://www.cnblogs.com/yulinfeng/p/11020576.html
+3、截图及 ThreadPrint理解例子
+
+    https://www.cnblogs.com/virgosnail/p/9446090.html
