@@ -9,3 +9,8 @@
 3、截图及 ThreadPrint理解例子
 
     https://www.cnblogs.com/virgosnail/p/9446090.html
+    
+4、拓展 线程顺序执行
+
+    https://www.cnblogs.com/wenjunwei/p/10573289.html
+    https://www.jianshu.com/p/c943120597be
