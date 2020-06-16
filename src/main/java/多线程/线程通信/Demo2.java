@@ -14,10 +14,11 @@ public class Demo2 {
             public void run() {
                 while (true) {
                     while (num == 1) {
-                        System.out.println(this.getName());
+//                        System.out.print(this.getName());
+                        System.out.print("A");
                         num = 2;
                         try {
-                            Thread.sleep(1000L);
+                            Thread.sleep(10L);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
@@ -34,10 +35,11 @@ public class Demo2 {
 
 
                     while (num == 2) {
-                        System.out.println(this.getName());
+//                        System.out.print(this.getName());
+                        System.out.print("B");
                         num = 3;
                         try {
-                            Thread.sleep(1000L);
+                            Thread.sleep(10L);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
@@ -51,10 +53,11 @@ public class Demo2 {
             public void run() {
                 while (true) {
                     while (num == 3) {
-                        System.out.println(Thread.currentThread().getName());
+//                        System.out.print(Thread.currentThread().getName());
+                        System.out.print("C");
                         num = 1;
                         try {
-                            Thread.sleep(1000L);
+                            Thread.sleep(10L);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }

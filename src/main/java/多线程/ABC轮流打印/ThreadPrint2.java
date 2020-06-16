@@ -23,6 +23,7 @@ public class ThreadPrint2 implements Runnable {
                 synchronized (after) {
                     System.out.print(this.name);
 //                    after.notify();
+//                    当方法wait()被执行后，锁自动被释放，但执行完notify()方法后，锁不会自动释放。必须执行完notify()方法所在的synchronized代码块后才释放。
 //                    /*注释掉只会打印一遍，因为wait会释放锁，但是线程会进入等待阻塞状态（等待队列中），
 //                    因此无法进入下次循环，所以 wait() 和notify要一起用*/
 
