@@ -7,7 +7,7 @@ import org.junit.Test;
  * Created by Kevin on 2018/2/17.
  * https://www.cnblogs.com/yulinfeng/p/8452379.html
  */
-public class FunctionInterfaceTest {
+public class FunctionInterfaceTest  {
 
     @Test
     public void testLambda() {
@@ -19,6 +19,24 @@ public class FunctionInterfaceTest {
         });
         //使用Lambda表达式代替上面的匿名内部类
         func(() -> System.out.println("Hello World"));
+
+
+        //匿名内部类
+        FunctionInterface functionInterface = new FunctionInterface() {
+            @Override
+            public void test() {
+                System.out.println("");
+            }
+        };
+
+
+        //匿名内部类
+        new FunctionInterface(){
+            @Override
+            public void test() {
+
+            }
+        };
     }
 
     private void func(FunctionInterface functionInterface) {
