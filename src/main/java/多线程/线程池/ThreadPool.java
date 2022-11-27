@@ -43,7 +43,7 @@ class MyTask implements Runnable {
 
     @Override
     public void run() {
-        synchronized (executor) {  //加锁监视器的目的是应为多个线程修改数据，调用get方法可能获取数不对
+//        synchronized (executor) {  //加锁监视器的目的是应为多个线程修改数据，调用get方法可能获取数不对
             System.out.println("线程-" + Thread.currentThread().getId() + "：正在执行task ");
             try {
                 //线程休眠三秒更直观的查看效果
@@ -53,6 +53,6 @@ class MyTask implements Runnable {
             }
             System.out.println("线程池中核心线程数目：" + executor.getPoolSize() + "，队列中等待执行的任务数目：" +
                     executor.getQueue().size() + "，已执行完成的任务数目：" + executor.getCompletedTaskCount());
-        }
+//        }
     }
 }

@@ -18,7 +18,7 @@ public class ThreadPrint implements Runnable {  //A
             //A
             synchronized (now) {
                 synchronized (after) {
-                    System.out.print(name);
+                    System.out.print(name );
                     after.notify();   //B
                 }
                 try {
@@ -42,6 +42,7 @@ public class ThreadPrint implements Runnable {  //A
         Thread threadB = new Thread(threadPrintB);
         Thread threadC = new Thread(threadPrintC);
         threadA.start();
+
         threadA.sleep(100);
         threadB.start();
         threadB.sleep(100);

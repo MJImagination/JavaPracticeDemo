@@ -43,5 +43,12 @@ public class MyRunnable implements Runnable {
                 }
             }
         }).start();
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+            }
+        }).start();
     }   
 }

@@ -12,8 +12,8 @@ class TestThread implements Runnable {
                 notify();
                 try {
                     /*使其休眠100毫秒，放大线程差异*/
-                    Thread.currentThread();
-                    Thread.sleep(100);
+//                    System.out.println(Thread.currentThread().getName());
+                    Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

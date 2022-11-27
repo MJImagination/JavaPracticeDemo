@@ -10,6 +10,7 @@ import com.alibaba.fastjson.JSONObject;
  * @Date: Created in 2019/6/5
  */
 public class Demo1 {
+    public static final String aaa = "asd";
     public static void main(String[] args) {
         String jsonStr = "{\"code\":\"1\",\"msg\":\"??1,??0\",\"obj\":{\"errorLits\":[],\"successLits\":[\"e519aac0666711e96281fa1c85620eb5\"]}}";
         JSONObject jsonObject = JSON.parseObject(jsonStr);
@@ -17,5 +18,12 @@ public class Demo1 {
         for (int i = 0; i < jsonArray.size(); i++) {
             System.out.println(jsonArray.getString(i));
         }
+        System.out.println(chage("aa"));
+    }
+
+
+    static String chage(String before) {
+        before = before + "abc";
+        return before;
     }
 }

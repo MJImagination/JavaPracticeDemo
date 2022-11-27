@@ -1,10 +1,10 @@
 package 多线程.ABC轮流打印;
 
 
-import java.util.ArrayList;
-
 /**
- * @Description:
+ * @Description:  https://blog.csdn.net/u013394527/article/details/80560153
+ *                https://blog.csdn.net/weixin_38106322/article/details/104551127
+ *                https://blog.csdn.net/weixin_30482383/article/details/97051835
  * @Author: MJ
  * @Date: Created in 2020/3/31
  */
@@ -20,7 +20,7 @@ public class MyDemo1 implements Runnable {
     }
 
     public void pirntABC() throws InterruptedException {
-        int i = 3;
+        int i = 300;
         while (i > 0) {
             synchronized (now) {
                 i--;
@@ -29,6 +29,8 @@ public class MyDemo1 implements Runnable {
                     after.notify();
                 }
                 if (i == 0) {
+                    System.out.println(Thread.currentThread());
+                    System.out.println("打印" + i);
                     now.notify();
                 } else {
 
